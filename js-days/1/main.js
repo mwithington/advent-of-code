@@ -1,9 +1,5 @@
 const fs = require('fs');
 
-function countCalories() {
-    
-}
-
 function splitElves(elvesList) {
     return elvesList.split('\n\n');
 }
@@ -21,7 +17,6 @@ function caloriesPerElf(elvesArray) {
 
 function run() {
    const input = fs.readFileSync('./input.txt');
-   console.log(input);
    const separatedElves = splitElves(input.toString());
    console.log(separatedElves);
    let bigBoy = 0;
