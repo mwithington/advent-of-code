@@ -24,13 +24,17 @@ function run() {
    console.log(input);
    const separatedElves = splitElves(input.toString());
    console.log(separatedElves);
-   let bigBoy = 0;
-   for (let index = 0; index < separatedElves.length-1; index++) {
-    const elf_1 = caloriesPerElf(separatedElves[index]);
-    const elf_2 = caloriesPerElf(separatedElves[index+1]);
-    bigBoy = Math.max(bigBoy, elf_1, elf_2);
+   let bigBoyArr = [];
+   let bigBoy1 = 0;
+   let bigBoy2 = 0;
+   for (let index = 0; index < separatedElves.length; index++) {
+    // const elf_1 = caloriesPerElf(separatedElves[index]);
+    // const elf_2 = caloriesPerElf(separatedElves[index+1]);
+    // bigBoy = Math.max(bigBoy, elf_1, elf_2);
+    bigBoyArr.push(caloriesPerElf(separatedElves[index]));
    }
-  console.log(bigBoy); 
+   bigBoyArr.sort((a, b) => a - b);
+   console.log(bigBoyArr[bigBoyArr.length-2], bigBoyArr[bigBoyArr.length-3]);
 }
 
 run();
