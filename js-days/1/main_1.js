@@ -34,7 +34,7 @@ function run() {
     bigBoyArr.push(caloriesPerElf(separatedElves[index]));
    }
    bigBoyArr.sort((a, b) => a - b);
-   console.log(bigBoyArr[bigBoyArr.length-2], bigBoyArr[bigBoyArr.length-3]);
+   console.log(bigBoyArr[bigBoyArr.length-1] + bigBoyArr[bigBoyArr.length-2] + bigBoyArr[bigBoyArr.length-3]);
 }
 
 run();
