@@ -42,34 +42,47 @@ function run() {
         const dirMod = MOVE_ENUM[move[0]].dir * move[1];
         // rope.head[axis] += dirMod;
         console.log(axis, dirMod);
-        
-        let headMv = 0;
-        while(headMv != dirMod){
+
+        let step = 0;
+        while(step != dirMod){
             let mod = 1 * MOVE_ENUM[move[0]].dir;
-            console.log('move modifier', mod); 
-            if(!rope.areAdj()) {
-                rope.tail[axis] += mod;
+            if(!rope.areAdj()){
+                // Create new function to move tail in the needed direction and if diag move other axis as well
+                rope.moveTail();
                 tailMoves.add(`${rope.tail.x},${rope.tail.y}`);
-            } else {
-                rope.head[axis] += mod;
-                // check on final loop to see if caught up
-                if(!rope.areAdj()) {
-                    rope.tail[axis] += mod;
-                    tailMoves.add(`${rope.tail.x},${rope.tail.y}`);
-                }
-                if(rope.areDiag()) {
-                    const diff = rope.calcPosDiff();
-                    rope.tail.x += diff.xDiff;
-                    rope.tail.y += diff.yDiff;
-                    tailMoves.add(`${rope.tail.x},${rope.tail.y}`); 
-                }
-                headMv += mod;
-            } 
+            }
+            rope.head[axis] += mod; 
+            step += mod; 
         }
 
-        // if(index == 3){
-        //     break;
+        
+        // let headMv = 0;
+        // while(headMv != dirMod){
+        //     let mod = 1 * MOVE_ENUM[move[0]].dir;
+        //     console.log('move modifier', mod); 
+        //     if(!rope.areAdj()) {
+        //         rope.tail[axis] += mod;
+        //         tailMoves.add(`${rope.tail.x},${rope.tail.y}`);
+        //     } else {
+        //         rope.head[axis] += mod;
+        //         // check on final loop to see if caught up
+        //         if(!rope.areAdj()) {
+        //             rope.tail[axis] += mod;
+        //             tailMoves.add(`${rope.tail.x},${rope.tail.y}`);
+        //         }
+        //         // if(rope.areDiag()) {
+        //         //     const diff = rope.calcPosDiff();
+        //         //     rope.tail.x += diff.xDiff;
+        //         //     rope.tail.y += diff.yDiff;
+        //         //     tailMoves.add(`${rope.tail.x},${rope.tail.y}`); 
+        //         // }
+        //         headMv += mod;
+        //     } 
         // }
+
+        if(index == 0){
+            break;
+        }
     
     }
     console.log(rope);

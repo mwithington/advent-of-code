@@ -6,10 +6,17 @@ class Rope {
         this.head = head;
         this.tail = tail;
     }
+
     areAdj() {
         const { xDiff, yDiff } = this.calcPosDiff();
         // console.log(this.head.x, this.tail.x);
+        if(this.areDiag()) {
+            return true;
+        }
         if(xDiff > 1 || xDiff < -1){
+            if(yDiff == -1 || yDiff == 1) {
+                console.log('they are diagonal so move y 1 here as well');
+            }
             console.log('Needs x movement');
             return false;
         }
@@ -19,6 +26,7 @@ class Rope {
         }
         return true;
     }
+
     areDiag() {
         const { xDiff, yDiff } = this.calcPosDiff();
         const upRight = xDiff == 1 && yDiff == 1;
@@ -39,6 +47,14 @@ class Rope {
             yDiff: this.head.y - this.tail.y 
         }
     }
+
+    // moveX (dir) {
+    //     this
+    // }
+
+    // moveY () {
+
+    // }
 }
 
 module.exports = Rope;
