@@ -60,12 +60,3 @@ function run () {
 }
 
 run();
-// build object?
-/**
- * /
- *  -a
- *  -b
- *      -c
- *      -d
- *          u
- */
