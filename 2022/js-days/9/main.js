@@ -64,7 +64,7 @@ function run() {
         console.log(axis, dirMod);
         if(MOVE_ENUM[move[0]].dir > 1 ) {
             console.log('tail needs move too');
-            rope.
+            // rope.
         }
         
         // break;
