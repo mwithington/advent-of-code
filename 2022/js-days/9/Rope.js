@@ -7,8 +7,7 @@ class Rope {
         this.tail = tail;
     }
     areAdj() {
-        const xDiff = this.head.x - this.tail.x;
-        const yDiff = this.head.y - this.tail.y;
+        const { xDiff, yDiff } = this.calcPosDiff();
         // console.log(this.head.x, this.tail.x);
         if(xDiff > 1 || xDiff < -1){
             console.log('Needs x movement');
@@ -21,8 +20,7 @@ class Rope {
         return true;
     }
     areDiag() {
-        const xDiff = this.head.x - this.tail.x;
-        const yDiff = this.head.y - this.tail.y;
+        const { xDiff, yDiff } = this.calcPosDiff();
         const upRight = xDiff == 1 && yDiff == 1;
         const upLeft = xDiff == -1 && yDiff == 1; 
         const downLeft = xDiff == -1 && yDiff == -1;
@@ -33,6 +31,13 @@ class Rope {
             return true;   
         } 
         return false;
+    }
+
+    calcPosDiff(){
+        return {
+            xDiff: this.head.x - this.tail.x,
+            yDiff: this.head.y - this.tail.y 
+        }
     }
 }
 

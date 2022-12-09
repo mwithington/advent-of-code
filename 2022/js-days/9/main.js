@@ -66,24 +66,9 @@ function run() {
                 headMv += mod;
             } 
         }
-        // for (let j = 0; j < dirMod; j++) {
-        //     if(!rope.areAdj()) {
-        //         rope.tail[axis]++;
-        //         tailMoves.add(`${rope.tail.x},${rope.tail.y}`);
-        //     }
-        //     rope.head[axis]++;
-        //     // while(!rope.areAdj()) {
-        //     //     rope.tail[axis]++;
-        //     //     tailMoves.add(`${rope.tail.x},${rope.tail.y}`);   
-        //     // }
-            
-        // }
-        if(index == 3){
-            break;
-        }
-        // if(!rope.areAdj()) {
-        //     // need to move the tail and track location
-            
+
+        // if(index == 3){
+        //     break;
         // }
     
     }
