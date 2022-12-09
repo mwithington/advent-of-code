@@ -62,9 +62,10 @@ function run() {
         const dirMod = MOVE_ENUM[move[0]].dir * move[1];
         rope.head[axis] += dirMod;
         console.log(axis, dirMod);
-        if(MOVE_ENUM[move[0]].dir > 1 ) {
+
+        if(!rope.areAdj()) {
+            // need to move the tail and track location
             console.log('tail needs move too');
-            // rope.
         }
         
         // break;
