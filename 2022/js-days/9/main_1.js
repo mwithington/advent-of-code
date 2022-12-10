@@ -1,6 +1,6 @@
 const fs = require('fs');
 const Coord = require('./Coord');
-const Rope = require('./Rope');
+const Rope = require('./Rope_1');
 
 const MOVE_ENUM = {
     'R': {
@@ -31,10 +31,16 @@ function run() {
     const file = fs.readFileSync('./input.txt');
     const input = file.toString();
 
-    const rope = new Rope(new Coord(0,0), new Coord(0, 0));
+    const knots = [];
+    for (let index = 0; index < 10; index++) {
+        knots.push(new Coord(0, 0));
+    };
+    const rope = new Rope();
+
     const headMoves = split(input);
     const tailMoves = new Set();
-    tailMoves.add(`${rope.tail.x},${rope.tail.y}`); 
+    tailMoves.add(`${rope.knots[9].x},${rope.knots[9].y}`);
+
     for (let index = 0; index < headMoves.length; index++) {
         const move = headMoves[index].split(' ');
         console.log(move);

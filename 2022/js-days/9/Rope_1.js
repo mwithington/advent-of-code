@@ -1,10 +1,9 @@
 class Rope {
-    head;
-    tail;
+    knots;
 
-    constructor(head, tail) {
-        this.head = head;
-        this.tail = tail;
+
+    constructor(knots) {
+        this.knots = knots;
     }
 
     areAdj() {
