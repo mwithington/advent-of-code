@@ -24,7 +24,6 @@ function run(){
     let cycle = 0;
     let storedCommand, execCommand;
     let X = new Register(1);
-    const cycleCheckArray = [];
 
     let index = 0;
     const states = []
