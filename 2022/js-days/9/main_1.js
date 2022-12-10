@@ -43,7 +43,7 @@ function run() {
 
     for (let index = 0; index < headMoves.length; index++) {
         const move = headMoves[index].split(' ');
-        console.log(move);
+        // console.log(move);
         const axis = MOVE_ENUM[move[0]].axis;
         const dirMod = MOVE_ENUM[move[0]].dir * move[1];
         // rope.head[axis] += dirMod;
