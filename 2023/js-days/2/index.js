@@ -8,7 +8,7 @@ const MAX_CUBE_COUNTS = {
 
 
 async function calibration() {
-  let input = await fs.readFileSync('./test.txt');
+  let input = await fs.readFileSync('./input.txt');
   let replacedString = input.toString();
   // console.log(replacedString)
 
@@ -16,7 +16,6 @@ async function calibration() {
   console.log(lines)
   lines.pop()
   let sum = 0;
-  const validGames = {};
 
   for(let i = 0; i < lines.length; i++ ) {
     // complicated way?
